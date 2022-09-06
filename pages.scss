@@ -8,93 +8,280 @@ body, html {
   margin: 0;
   font-family: 'Roboto', sans-serif;
   scroll-behavior: smooth;
-  align-items: center;
 }
+
+@mixin button($type) {
+  border: 0;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  font-size: 1.1rem;
+  border-radius: 100px;
+  color: white;
+  background-color: rgb(104, 104, 104);
+  background-image: linear-gradient(0deg, color.scale($color-primary, $alpha: -10%) 0%, color.scale($color-secondary, $alpha: -10%) 100%);
+  cursor: pointer;
+  transition-duration: 0.25s;
+  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
+
+  &:hover {
+    background-color: white;
+    box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.50);
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+
+
+.container {
+  max-width: 1280px;
+  margin: auto;
+  position: relative;
+}
+
 .header {
-    padding: 1rem $appPadding;
-    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
-    position: relative;
-    z-index: 1000;
-  
-    &__logo {
-      font-family: "Shrikhand", "cursive";
-      margin: 0;
-      text-align: center;
-    }
+  padding: 1rem $appPadding;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+  position: relative;
+  z-index: 1000;
+
+  &__logo {
+    font-family: "Shrikhand", "cursive";
+    margin: 0;
+    text-align: center;
+  }
 }
-footer {
-    background-color: #353535;
-    
-    .container {
-      display: flex;
-      flex-direction: column;
-      padding: $appPadding;
-    }
-    
-    &__logo {
-      color: white;
-      font-family: "Shrikhand", "cursive";
-      margin: 0;
-      font-size: 1.2rem;
-      margin-bottom: $appPadding;
-    }
+
+.footer {
+  background-color: #353535;
   
-    &__list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-  
-    &__listElt {
-      margin: 0.5rem 0;
-  
-      &:first-child {
-        margin-top: 0;
-      }
-  
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  
-    &__link {
-      color: white;
-      text-decoration: none;
-  
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  
-    &__icon {
-      width: 1.2rem;
-      margin-right: 0.5rem;
-    }
+  .container {
+    display: flex;
+    flex-direction: column;
+    padding: $appPadding;
   }
   
-    i.card__like.menu__like.menu__like--noBg.far.fa-heart.fa-2x:hover {
-      font-weight: 900;
-      background: linear-gradient(#9356DC, #FF79DA );
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
+  &__logo {
+    color: white;
+    font-family: "Shrikhand", "cursive";
+    margin: 0;
+    font-size: 1.2rem;
+    margin-bottom: $appPadding;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__listElt {
+    margin: 0.5rem 0;
+
+    &:first-child {
+      margin-top: 0;
     }
-  
-    .local {
-      display: flex;
-      justify-content: center;
-      padding: 1.25rem $appPadding;
-      background-color: rgb(243, 243, 243);
-      font-size: 1.2rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__icon {
+    width: 1.2rem;
+    margin-right: 0.5rem;
+  }
+}
+    .header {
+      &--withBackArrow {
+        position: relative;
+      }
+    
+      &__arrow {
+        position: absolute;
+        left: 2rem;
+        height: 2rem;
+        width: 2rem;
+        top: 50%;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        transform: translateY(-50%);
+        font-size: 1.2rem;
+        color: black;
+      }
+    }
+    
+    .heroImg {
+      max-width: 100%;
+      max-height: 32rem;
+      width: 100%;
+      object-fit: cover;
+    }
+    
+    .menu {
+      margin-top: -4rem;
+      border-radius: 2rem 2rem 0 0;
+      background-color: #f6f6f6;
+      z-index: 1;
       position: relative;
     
-      &__icon {
-        margin-right: 1rem;
+      &__header {
+        padding: 1rem 2rem 0 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
       }
     
-      &__text {
-        font-weight: 700;
+      &__title {
+        font-family: "Shrikhand", "cursive";
       }
+      &__btn{
+        border: 0;
+        background-color: inherit;
+      }
+      i.card__like.menu__like.menu__like--noBg.far.fa-heart.fa-2x:hover {
+        font-weight: 900;
+        background: linear-gradient(#9356DC, #FF79DA );
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+    }
+     
+    
+    .submenus {
+      display: grid;
+    
+      @media (min-width:64rem) {
+        grid-template-columns: repeat(3,1fr);
+        column-gap: 1rem;
+      }
+    }
+    
+    .submenu {
+      max-width: 100%;
+      overflow: hidden;
+      padding: 0 1rem;
+    
+      &__title {
+        text-transform: uppercase;
+        position: relative;
+        padding-bottom: 0.5rem;
+        font-weight: normal;
+    
+        &::after {
+          content: "";
+          width: 3rem;
+          height: 0.25rem;
+          background-color: $color-tertiary;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+        }
+      }
+    }
+    
+    .menuItem {
+      background-color: white;
+      padding: 1rem;
+      display: flex;
+      border-radius: 0.75rem;
+      margin: 1rem 0;
+      box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      cursor: pointer;
+      
+    
+      &__header {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        flex: 1;
+      }
+    
+      &__title {
+        margin: 0;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    
+      &__description {
+        margin: 0;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    
+      &__price {
+        font-weight: bold;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        padding-left: 0.5rem;
+      }
+    
+      &__confirmation {
+        background-color: $color-tertiary;
+        margin: -1rem -5rem -1rem 1rem;
+        width: 4rem;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        transition-duration: 0.5s;
+      }
+    
+      &:hover &__confirmation {
+        margin-right: -1rem;
+      }
+    
+      &__wrapIcon {
+        height: 1.6rem;
+        width: 1.6rem;
+        background-color: white;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        border-radius: 100px;
+        transform: rotate(180deg);
+        transition-duration: 0.5s;
+    
+      }
+    
+      &:hover &__wrapIcon {
+        transform: rotate(0);
+      }
+    
+      &__icon {
+        color: $color-tertiary;
+      }
+    }
+    
+    
+    
+    .wrapBtn {
+      display: flex;
+      text-decoration: none;
+      justify-content: center;
+      padding: 3rem 0;
+    }
+    
+    .commandBtn {
+      @include button(primary);
+      cursor: pointer;
     }
     
   
