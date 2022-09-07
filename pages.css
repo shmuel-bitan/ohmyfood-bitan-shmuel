@@ -108,13 +108,41 @@ body, html {
   border: 0;
   background-color: inherit;
 }
-.menu i.card__like.menu__like.menu__like--noBg.far.fa-heart.fa-2x:hover {
-  font-weight: 900;
-  background: linear-gradient(#9356DC, #FF79DA);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
+.menu .fa-heart {
+  color: black;
+  cursor: pointer;
+}
+.menu .fa-heart:hover {
+  -webkit-animation: fill 5s ease-in-out;
+          animation: fill 5s ease-in-out;
+  display: inline-block;
   opacity: 1;
+  background: linear-gradient(to left, #9356dc, #b35cdc, #cf64dc, #e86edb, #ff79da);
+  background: -webkit-linear-gradient(to left, #9356dc, #b35cdc, #cf64dc, #e86edb, #ff79da);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+@-webkit-keyframes fill {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fill {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .submenus {
@@ -169,6 +197,11 @@ body, html {
           animation: fadein 3s ease-in-out;
 }
 
+.dish {
+  -webkit-animation: fadein 6s ease-in-out;
+          animation: fadein 6s ease-in-out;
+}
+
 .delay-3 {
   -webkit-animation: fadein 4s ease-in-out;
           animation: fadein 4s ease-in-out;
@@ -184,6 +217,11 @@ body, html {
           animation: fadein 6s ease-in-out;
 }
 
+.dessert {
+  -webkit-animation: fadein 9s ease-in-out;
+          animation: fadein 9s ease-in-out;
+}
+
 .delay-6 {
   -webkit-animation: fadein 7s ease-in-out;
           animation: fadein 7s ease-in-out;
@@ -195,16 +233,6 @@ body, html {
 }
 
 .delay-8 {
-  -webkit-animation: fadein 9s ease-in-out;
-          animation: fadein 9s ease-in-out;
-}
-
-.dish {
-  -webkit-animation: fadein 6s ease-in-out;
-          animation: fadein 6s ease-in-out;
-}
-
-.dessert {
   -webkit-animation: fadein 9s ease-in-out;
           animation: fadein 9s ease-in-out;
 }
