@@ -126,6 +126,10 @@ body, html {
 .footer__listElt:last-child {
   margin-bottom: 0;
 }
+.footer__listElt__link {
+  color: white;
+  text-decoration: none;
+}
 .footer__link {
   color: white;
   text-decoration: none;
