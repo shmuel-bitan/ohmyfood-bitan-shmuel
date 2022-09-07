@@ -169,6 +169,36 @@ body, html {
           animation: fadein 3s ease-in-out;
 }
 
+.delay-3 {
+  -webkit-animation: fadein 4s ease-in-out;
+          animation: fadein 4s ease-in-out;
+}
+
+.delay-4 {
+  -webkit-animation: fadein 5s ease-in-out;
+          animation: fadein 5s ease-in-out;
+}
+
+.delay-5 {
+  -webkit-animation: fadein 6s ease-in-out;
+          animation: fadein 6s ease-in-out;
+}
+
+.delay-6 {
+  -webkit-animation: fadein 7s ease-in-out;
+          animation: fadein 7s ease-in-out;
+}
+
+.delay-7 {
+  -webkit-animation: fadein 8s ease-in-out;
+          animation: fadein 8s ease-in-out;
+}
+
+.delay-8 {
+  -webkit-animation: fadein 9s ease-in-out;
+          animation: fadein 9s ease-in-out;
+}
+
 .dish {
   -webkit-animation: fadein 6s ease-in-out;
           animation: fadein 6s ease-in-out;
