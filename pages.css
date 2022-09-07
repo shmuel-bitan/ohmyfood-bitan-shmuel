@@ -114,6 +114,7 @@ body, html {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+  opacity: 1;
 }
 
 .submenus {
@@ -148,6 +149,53 @@ body, html {
   bottom: 0;
 }
 
+.starter {
+  -webkit-animation: fadein 3s ease-in-out;
+          animation: fadein 3s ease-in-out;
+}
+
+.delay-0 {
+  -webkit-animation: fadein 1s ease-in-out;
+          animation: fadein 1s ease-in-out;
+}
+
+.delay-1 {
+  -webkit-animation: fadein 2s ease-in-out;
+          animation: fadein 2s ease-in-out;
+}
+
+.delay-2 {
+  -webkit-animation: fadein 3s ease-in-out;
+          animation: fadein 3s ease-in-out;
+}
+
+.dish {
+  -webkit-animation: fadein 6s ease-in-out;
+          animation: fadein 6s ease-in-out;
+}
+
+.dessert {
+  -webkit-animation: fadein 9s ease-in-out;
+          animation: fadein 9s ease-in-out;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .menuItem {
   background-color: white;
   padding: 1rem;
@@ -211,6 +259,11 @@ body, html {
 }
 .menuItem__icon {
   color: #99E2D0;
+}
+
+.menuItem delay-0 {
+  -webkit-animation: fadeIn;
+          animation: fadeIn;
 }
 
 .wrapBtn {

@@ -196,6 +196,37 @@ body, html {
         }
       }
     }
+    .starter {
+      animation: fadein 3s ease-in-out;
+    }
+    .delay-0{
+      animation: fadein 1s ease-in-out;
+    }
+    .delay-1{
+      animation: fadein 2s ease-in-out;
+    }
+    .delay-2{
+      animation: fadein 3s ease-in-out;
+    }
+    
+    
+    
+    .dish {
+      animation: fadein 6s ease-in-out;
+      
+    }
+    .dessert {
+      animation: fadein 9s ease-in-out;
+     
+    }
+    @keyframes fadein {
+      from {
+        opacity:0;
+      }
+      to {
+        opacity:1;
+      }
+    } 
     
     .menuItem {
       background-color: white;
@@ -271,6 +302,9 @@ body, html {
       &__icon {
         color: $color-tertiary;
       }
+    }
+    .menuItem delay-0{
+      animation:fadeIn
     }
     
     
